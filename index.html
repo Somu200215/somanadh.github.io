@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body onload="articleView()">
+    <div id="topBar">
+      <div id="logo">
+        <h1> <i class="fa-solid fa-cubes-stacked"></i>Somu</h1>
+      </div>
+      <hr>
+      <header id="navBar">
+        <div id="navBarLeft">
+            <button onclick="articleView()">Home</button>
+            <button onclick="aboutSec()">AboutUs</button>
+            <button onclick="displayArticles('null')">Articles</button>
+        </div>
+        <div id="navBarRight">
+          <button onclick="createArticle()">Create</button>
+        </div>
+      </header>
+      <hr>
+    </div>
+    <!-- create Form template -->
+    <div id="homeArticles">
+
+    </div>
+    <div id="formdiv">
+        <form id="form" onsubmit="prevent(event)">
+          <label for="title" id="">Title</label>
+          <input id="title" type="text" required>
+          <br>
+          <label for="imgurl" id="">Image URL</label>
+          <input type="text" id="imgurl" required>
+          <br>
+          <label for="category" id="">Category</label>
+          <select id="category" required>
+            <option value="null" selected disabled>Select</option>
+            <option value="Action and Adventure">Action and Adventure</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Humor and Satire">Humor and Satire</option>
+            <option value="Romanace">Romanace</option> 
+          </select>
+          <br>
+          <label for="author" id="">Author</label>
+          <select id="author" required>
+            <option value="null" selected disabled>Select</option>
+            <option value="Maya Angelou">Maya Angelou</option>
+            <option value="George Orwell">George Orwell</option>
+            <option value="Charles">Charles</option>
+            <option value="Dickens">Dickens</option>
+          </select>
+          <br>
+          <label for="postdate" id="">Date</label>
+          <input type="date" id="postdate" required>
+          <br>
+          <label for="content">Content</label>
+          <textarea id="content" required></textarea>
+          <br>
+          <span id="invalidmsg">*Please fill all the above fields</span>
+          <input type="submit" onclick="ArticleForm();OutTag()">
+        </form>
+      </div>
+      <div id="articleListSection">
+        <!-- <span id="updatedmsg">SuccessFully Updated!!</span> -->
+        <div id="hide">
+         .. updated SuccessFully..
+        </div>
+        <div id="articleFilter">
+          <select id="categoryfilter" >
+            <option value="null" selected>Select</option>
+            <option value="Action and Adventure">Action and Adventure</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Humor and Satire">Humor and Satire</option>
+            <option value="Romanace">Romanace</option>
+            
+          </select>
+          <select id="authorfilter" >
+            <option value="null" selected>Select</option>
+            <option value="Maya Angelou">Maya Angelou</option>
+            <option value="George Orwell">George Orwell</option>
+            <option value="Charles">Charles</option>
+            <option value="Dickens">Dickens</option>
+          </select>
+          <button onclick="displayArticles('notnull')">Show Results</button>
+          <div>
+            <button onclick="displayList()"><i class="fa-solid fa-bars"></i></button>
+            <button onclick="displayGrid()"><i class="fa-solid fa-grip"></i></button>
+          </div>
+        </div>
+        <div id="articleList">
+         
+        </div>
+      </div>
+      <div id="selectedArticle">
+      </div>
+      <div id="aboutsec">
+        <div class="about-section">
+          <h1>About Us Page</h1>
+          <p>Some text about who we are and what we do.</p>
+          <p>Resize the browser window to see that this page is responsive by the way.</p>
+        </div>
+        
+        <h2 style="text-align:center">Our Team</h2>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291O2SrfPwgjOxwspR7IUrZHYkrJnFya0_g&usqp=CAU" alt="Jane" style="width:100%" alt="Jane" style="width:100%">
+              <div class="container">
+                <h2>Sakthi</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>offcialsakthi@example.com</p>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjACHd3XKI2YuBn2mhuqzeYUoaQU9Oe4C5_w&usqp=CAU" alt="Mike" style="width:100%" alt="Mike" style="width:100%">
+              <div class="container">
+                <h2>Dhanushram</h2>
+                <p class="title">Art Director</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>dhanu@example.com</p>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9NrKQqJ5ODTYCIZQfEdIqzGNuH35v7PR5yw&usqp=CAU" alt="John" style="width:100%" alt="John" style="width:100%">
+              <div class="container">
+                <h2>Dino Doe</h2>
+                <p class="title">Designer</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>Dino@example.com</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <footer>
+        <div id="footerdiv">
+          <div id="logo">
+            <h1>Somu</h1>
+          </div>
+          <div id="footernav">
+            <p>© Copyright 2022 </p>
+            <p>|  Ducen IT |</p>
+            <p>|  All Rights Reserved | Privacy Policy |</p>
+            <p>| Software License Agreement | Website Terms of Use | Sitemap</p>
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

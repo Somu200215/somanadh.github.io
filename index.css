@@ -1,0 +1,235 @@
+#logo{
+    margin-left: 12%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+button{
+    cursor: pointer;
+}
+#navBar{
+    display: flex;
+    background-color: #eecae8;
+}
+#topBar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgb(126, 236, 231);
+    opacity: 1;
+  }
+#navBarLeft{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+#navBarLeft > button{
+    background: none;
+    border: none;
+}
+#navBarRight{
+    width: 40%;
+    display: flex;
+    justify-content:flex-end;
+}
+#navBarRight > button{
+    border: none;
+    background-color: rgb(124, 128, 131);
+    color: blanchedalmond;
+    padding: 10px;
+    border-radius: 15px;
+
+}
+#invalidmsg{
+    display: none;
+    color: brown;
+}
+#hide{background:rgb(94, 125, 74); width:400px; margin:10px; color:#fff; padding:10px; text-align:center;display: none;}
+#formdiv{
+    background-color: rgba(231, 241, 133, 0.473);
+    border: 3px solid;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#articleList
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.articleOnArticleList{
+    width: 100%;
+}
+#articleOnArticleList{
+    width: 100%;
+    color: rgba(69, 192, 45, 0.76);
+    background-color: rgb(61, 70, 71);
+    display: flex;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+#articleListFoot{
+    display: flex;
+    justify-content: space-around;
+    padding:0 20px 0 20px;
+    flex-wrap: wrap;
+    color: rgba(38, 175, 79, 0.781);
+}
+#articleListImageAndContent{
+    padding: 3px;
+    /* border: 2px solid rgb(130, 126, 126); */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;  
+}
+#articleList >h2{
+    margin: 10%;
+    text-align: center;
+}
+#articleimage{
+    width: 200px;
+    height: 200px;
+    height: auto;
+}
+#articleListImageAndContent > #articleListContent{
+    width: 70%;
+}
+
+#articleListContent > #description{
+    white-space: nowrap;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(113, 128, 107, 0.767);
+}
+#articleListRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    margin: auto;
+}
+#articleListRight > p{
+    margin: 10px;
+    cursor: pointer;
+}
+
+#articleListLeft{
+    width: 90%;
+}
+#selectedArticleImagediv{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+#selectedArticleImage{
+    width: 50%;
+    height: auto;
+}
+#articleListSection,#formdiv{
+    display: none;
+}
+#articleFilter{
+    display: flex;
+    justify-content: space-around;
+}
+#articleFilter > button{
+    padding: 10px;
+    background: none;
+    border: none;
+    background-color: rgb(160, 140, 158);
+    color: rgb(16, 145, 69);
+}
+#articleFilter > select{
+    width: 200px;
+    padding: 10px;
+}
+#articleHeading{
+    text-align: center;
+}
+footer{
+    background-color: #474e5d;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+#footerdiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#footernav{
+    margin-right: 12%;
+}
+#formdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 30px 0;
+    padding: 30px 0 30px 0;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-content: center;
+    align-items: center;
+}
+#form > input,textarea,select{
+    width: 50%;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
